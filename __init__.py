@@ -436,7 +436,7 @@ class Command:
         target = os.path.normcase(os.path.abspath(filename))
         for h in ed_handles():
             e = Editor(h)
-            fn = e.get_filename()
+            fn = e.get_prop(PROP_FN, '')
             if fn and os.path.normcase(os.path.abspath(fn)) == target:
                 return e
         return None
